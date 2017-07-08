@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>webpage-foundation</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-  <link rel="stylesheet" href="assets/css/main.css" />
-</head>
-<body>
-<div id="asside-panel">
-</div>
+<?php get_header();?>
+
+<?php require_once('template-parts/navigation/side-panel-menu.php');?>
+
 <div id="content">
+	<!-- Start the loop -->
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+		<?php get_template_part('template-parts/post/content', get_post_format()); ?>
+	
+	<?php endwhile; ?>
+
+	<div id="pagination-wrap">
+	  <?php echo paginate_links(); ?>
+	</div>
+	</div>
+
+	<?php else : ?>
+	<p><?php _e( 'Could\'t load the content. This page probably doesn\'t have any' ); ?></p>
+	<!-- Stop the loop -->
+	<?php endif; ?>
 
 </div>
 
-<script src="assets/js/main.js" type="text/javascript"></script>
-</body>
-</html>
+<?php get_footer();?>
