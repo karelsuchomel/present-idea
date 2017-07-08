@@ -8,13 +8,9 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-
-<div class="page-content">
-
-  <section>
-    <h1 class="page-title">Webpage foundations</h1>
-    <p>This almanach of barebone project settings was gllued together by Karel Suchomel 2017</p>
-  </section>
+<div id="asside-panel">
+</div>
+<div id="content">
 
 </div>
 
