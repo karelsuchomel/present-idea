@@ -3,7 +3,7 @@
 	<?php the_post_thumbnail('original'); ?>
 <?php endif; ?>
 	<h1>
-		<?php the_title(); ?>
+		<span class="text-bg"><?php the_title(); ?></span>
 	</h1>
 </div>
 

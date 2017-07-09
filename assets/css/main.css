@@ -104,9 +104,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-     -moz-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -388,17 +386,17 @@ body {
 }
 
 #content {
-  width: 80%;
-}
-
-#page {
-  max-width: 1180px;
-  padding: 0px 30px;
+  width: 844px;
+  width: -webkit-calc(100vw - 2 * 220px);
+  width: calc(100vw - 2 * 220px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2% 4%;
 }
 
 #asside-panel {
   width: 20%;
-  min-width: 250px;
+  width: 220px;
 }
 
 .menu ul {
@@ -408,11 +406,14 @@ body {
 }
 .menu ul li a {
   display: block;
-  padding: 17px 34px;
+  padding: 12px 17px;
+  font-family: "Merriweather", serif;
   color: white;
   font-weight: 400;
   text-decoration: none;
   text-align: right;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 #searchform {
@@ -431,8 +432,9 @@ body {
 }
 
 #content-wrap {
-  margin: 68px 102px;
-  max-width: 640px;
+  padding: 5% 10%;
+  max-width: 720px;
+  margin: 0 auto;
   font-family: "Merriweather", serif;
   font-size: 18px;
   line-height: 27px;
@@ -444,18 +446,34 @@ body {
 
 #page-header {
   position: relative;
+  overflow: hidden;
 }
 #page-header .wp-post-image {
-  max-width: -webkit-calc(640px + 2 * 102px);
-  max-width: calc(640px + 2 * 102px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
   height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
 }
 #page-header h1 {
-  position: absolute;
-  max-width: 640px;
-  bottom: 0px;
-  left: 102px;
-  font-size: 102px;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10% 10% 5%;
+  font-family: "Merriweather", serif;
+  font-size: 68px;
   font-weight: 400;
-  line-height: 136px;
+  line-height: 102px;
+}
+#page-header h1 span.text-bg {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#comments-container {
+  width: 220px;
 }

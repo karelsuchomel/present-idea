@@ -13,7 +13,6 @@
 	<div id="pagination-wrap">
 	  <?php echo paginate_links(); ?>
 	</div>
-	</div>
 
 	<?php else : ?>
 	<p><?php _e( 'Could\'t load the content. This page probably doesn\'t have any' ); ?></p>
@@ -21,5 +20,7 @@
 	<?php endif; ?>
 
 </div>
+
+<?php require_once('template-parts/comment-area/side-panel-comments.php');?>
 
 <?php get_footer();?>

@@ -60,7 +60,7 @@ function zsh_customize_css() { ?>
 			color: <?php echo get_theme_mod('prid_complementary_color'); ?> ;
 		}
 		h1 {
-			color: <?php echo get_theme_mod('prid_dark_background_color'); ?> ;
+			color: <?php echo get_theme_mod('prid_complementary_color'); ?> ;
 		}
 	</style>
 
