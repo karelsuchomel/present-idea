@@ -405,8 +405,13 @@ body {
   margin: 0px;
 }
 .menu ul li a {
+  position: relative;
   display: block;
-  padding: 12px 17px;
+  padding: 17px;
+  padding-right: 51px;
+  border-top: 1px solid #777;
+  -webkit-box-shadow: 0px 1px #777;
+          box-shadow: 0px 1px #777;
   font-family: "Merriweather", serif;
   color: white;
   font-weight: 400;
@@ -414,6 +419,11 @@ body {
   text-align: right;
   font-size: 14px;
   line-height: 21px;
+}
+.menu ul li a:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 #searchform {
@@ -431,6 +441,92 @@ body {
   max-width: 100%;
 }
 
+.vertical-progress {
+  width: 3px;
+  height: 50%;
+  position: absolute;
+  background: white;
+  z-index: 0;
+}
+
+.vertical-progress.top {
+  top: 0;
+  right: 24px;
+}
+
+.vertical-progress.bottom {
+  bottom: 0;
+  right: 24px;
+}
+
+.radial-progress {
+  position: absolute;
+  width: 20px;
+  top: -webkit-calc(50% - 10px);
+  top: calc(50% - 10px);
+  right: 16px;
+  z-index: 1;
+}
+.radial-progress .circle {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+.radial-progress .circle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  top: 3px;
+  right: 3px;
+}
+.radial-progress .circle .mask, .radial-progress .circle .fill {
+  position: absolute;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  -webkit-transition: -webkit-transform 2s linear;
+  transition: -webkit-transform 2s linear;
+  transition: transform 2s linear;
+  transition: transform 2s linear, -webkit-transform 2s linear;
+}
+.radial-progress .circle .mask {
+  clip: rect(0px, 20px, 20px, 10px);
+}
+.radial-progress .circle .fill {
+  background: white;
+  clip: rect(0px, 10px, 20px, 0px);
+}
+
+@-webkit-keyframes showUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
 #content-wrap {
   padding: 5% 10%;
   max-width: 720px;
@@ -439,6 +535,15 @@ body {
   font-size: 18px;
   line-height: 27px;
   color: #111;
+  opacity: 0;
+  -webkit-animation-name: showUp;
+          animation-name: showUp;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 #content-wrap blockquote {
   background: #EEE;
@@ -465,6 +570,16 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding: 10% 10% 5%;
+  opacity: 0;
+  -webkit-transform: translateY(25px);
+      -ms-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-animation-name: showUp;
+          animation-name: showUp;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   font-family: "Merriweather", serif;
   font-size: 68px;
   font-weight: 400;

@@ -62,6 +62,9 @@ function zsh_customize_css() { ?>
 		h1 {
 			color: <?php echo get_theme_mod('prid_complementary_color'); ?> ;
 		}
+		.radial-progress .circle:after {
+			background: <?php echo get_theme_mod('prid_base_background_color'); ?> ;
+		}
 	</style>
 
 <?php }

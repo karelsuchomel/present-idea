@@ -1,13 +1,13 @@
 <?php
 // import stylesheet
 function present_idea_scripts () {
-  wp_enqueue_style( 'style.css', get_stylesheet_uri() );
+	wp_enqueue_style( 'style.css', get_stylesheet_uri() );
 
-  wp_register_style('main.css', get_template_directory_uri() . '/assets/css/main.css', false, NULL, 'all' );
-  wp_enqueue_style('main.css');
+	wp_register_style('main.css', get_template_directory_uri() . '/assets/css/main.css', false, NULL, 'all' );
+	wp_enqueue_style('main.css');
 
-  wp_register_script( 'main.js', get_template_directory_uri() . '/assets/js/main.js',  array(), NULL, false );
-  wp_enqueue_script( 'main.js' );
+	wp_register_script( 'main.js', get_template_directory_uri() . '/assets/js/main.js', array(), NULL, true );
+	wp_enqueue_script( 'main.js' );
 }
 
 // so the previous code actualy runs
@@ -18,7 +18,7 @@ function present_idea_theme_setup(){
 
 	// navigation menus
 	register_nav_menus(array(
-	  'menu-side-list' => __('Side bar menu'),
+		'menu-side-list' => __('Side bar menu'),
 	));
 
 	// add featured image support
