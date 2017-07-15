@@ -53,18 +53,17 @@ add_action('customize_register', 'present_idea_theme_customize_register');
 function zsh_customize_css() { ?>
 
 	<style>
-		#asside-panel {
-			background: <?php echo get_theme_mod('prid_base_background_color'); ?> ;
-		}
 		a {
 			color: <?php echo get_theme_mod('prid_complementary_color'); ?> ;
 		}
 		h1 {
 			color: <?php echo get_theme_mod('prid_complementary_color'); ?> ;
 		}
-		.radial-progress .circle:after {
-			background: <?php echo get_theme_mod('prid_base_background_color'); ?> ;
+		/*
+		.vertical-progress {
+			background-color: <?php echo get_theme_mod('prid_base_background_color'); ?> ;
 		}
+		*/
 	</style>
 
 <?php }

@@ -1,27 +1,32 @@
+$progress-bar-color: #DCDCDC
+
 .vertical-progress
 	width: 3px
 	height: 50%
 	position: absolute
-	background: white
 	z-index: 0
+	background: $progress-bar-color
 .vertical-progress.top
 	top: 0
-	right: 24px
+	left: 24px
 .vertical-progress.bottom
 	bottom: 0
-	right: 24px
+	left: 24px
 
 .radial-progress
 	position: absolute
 	width: 20px
 	top: calc(50% - 10px)
-	right: 16px
+	left: 15px
 	z-index: 1
 
 	.circle
 		position: relative
 		height: 20px
 		width: 20px
+		border-radius: 50%
+		background: #FEFEFE
+		box-shadow: inset 0px 0px 0px 4px #DCDCDC
 
 		&:after
 			content: ""
@@ -32,17 +37,18 @@
 			border-radius: 50%
 			top: 3px
 			right: 3px
+			background: #FEFEFE
 	
 		.mask, .fill
 			position: absolute
-			border-radius: 50%
 			height: 20px
 			width: 20px
+			border-radius: 50%
 			transition: transform 2s linear
 
 		.mask
 			clip: rect(0px, 20px, 20px, 10px)
 
 		.fill
-			background: white
+			background: $progress-bar-color
 			clip: rect(0px, 10px, 20px, 0px)

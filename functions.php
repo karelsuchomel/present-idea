@@ -29,6 +29,14 @@ function present_idea_theme_setup(){
 
 add_action('after_setup_theme', 'present_idea_theme_setup');
 
+// Filter wp_nav_menu() to add additional links and other output
+function new_nav_menu_items( $items ) {
+	$homelink = '<li class="home"><a href="' . home_url( '/' ) . '">' . bloginfo( 'name' ) . '</a></li>';
+	$items = $homelink . $items;
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'new_nav_menu_items' );
+
 // customizations (colors)
 require_once('include/customizations.php');
 

@@ -1,7 +1,14 @@
-<div id="page-header">
+<div id="page-header"
 <?php if ( has_post_thumbnail() ) : ?>
-	<?php the_post_thumbnail('original'); ?>
+	<?php
+		$postID = get_post();
+		$postThumbURI = get_the_post_thumbnail_url( $postID, 'large' ); 
+	?>
+
+	style="background-image: url(<?php echo $postThumbURI ?>);padding: 10% 10% 5%;"
+
 <?php endif; ?>
+>
 	<h1>
 		<span class="text-bg"><?php the_title(); ?></span>
 	</h1>
