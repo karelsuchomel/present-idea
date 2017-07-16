@@ -21,14 +21,35 @@ $border-color: #CCC
 	background: #FEFEFE
 	box-shadow: 1px 0px $border-color
 
-	.home-page-link
-		@extend .side-menu-item
-		border-top: 0px
+	li
+		&:hover
+			> .home-page-link
+				clip: rect(0px, 220px, 61px, 220px)
+			> .home-page-link.hover
+				clip: rect(0px, 220px, 61px, 0px)
 
-		// text
-		font-weight: 700
-		font-size: 18px
-		line-height: 27px
+		.home-page-link
+			@extend .side-menu-item
+			clip: rect(0px, 220px, 61px, 0px)
+			border-top: 0px
+			position: relative
+			overflow: hidden
+			transition: 0.2s ease-in-out
+
+			// text
+			font-weight: 700
+			font-size: 18px
+			line-height: 27px
+
+		.home-page-link.hover
+			overflow: hidden
+			clip: rect(0px, 0px, 61px, 0px)
+			position: absolute
+			width: 100%
+			box-sizing: border-box
+			top: 0
+			left: 0
+			color: white
 
 .menu
 	ul
