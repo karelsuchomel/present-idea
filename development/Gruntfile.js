@@ -65,14 +65,6 @@ module.exports = function(grunt) {
           dest: '../assets/js/',
         }],
       },
-      concat_CSS: { // for appending comments to the start of a file
-        options: {
-          separator: '\n\n',
-        },
-        files: {
-          '../assets/css/main.css': ['sass/comment-header.css', '../assets/css/main.css'],
-        },
-      },
     },
     postcss: {
       options: {
@@ -95,7 +87,7 @@ module.exports = function(grunt) {
         },
         src: ['./'],
         dest: './',
-        exclusions: ['development/**/*', '.gitignore']
+        exclusions: [ '../development', '../.gitignore', '../cmd2', '../.git']
       }
     }
   });
